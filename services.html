@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DelHelp-Services</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/download.png" rel="icon">
+  <link href="assets/img/download.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="assets/css/L.Control.OpenCageGeocoding.dev.css" />
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="assets/js/L.Control.OpenCageGeocoding.dev.js"></script>
+  <style>
+    #map{
+      height: 600px;
+      width: 100%;
+      padding-left: 1cm;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>DelHelp</h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/1.jpg');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Services</h2>
+              <p>At DelHelp, we offer a range of innovative solutions tailored to meet the needs of e-commerce
+                businesses. From advanced mapping functionalities to personalized navigation assistance, our services
+                are designed to optimize your online presence and enhance user experience. Explore our offerings and
+                discover how DelHelp can elevate your e-commerce strategy today.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Services</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Maps
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-right">
+        <button onclick="def()"><li>Default</li></button>
+        <button onclick="hybd()"><li>Hybrid</li></button>
+        <button onclick="sat()"><li>Satellite</li></button>
+        <button onclick="ter()"><li>Terrain</li></button>
+      </ul>
+    </div>
+    <div id="map" class="ma">
+      <div class="leaflet-control coordinate"></div>
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>DelHelp</span>
+          </a>
+          <p>DelHelp streamlines e-commerce navigation through the utilization of open-source maps, facilitating
+            seamless connections between buyers and sellers. Enhance your visibility and accessibility with DelHelp's
+            innovative solutions.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            Azad Hind Faug Marg <br>
+            Dwarka, Delhi 110078<br>
+            India <br><br>
+            <strong>Phone:</strong> +91 xxxxxxxxxx<br>
+            <strong>Email:</strong> info@delhelp.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DelHelp</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/line.js"></script>
+  <script src="assets/js/point.js"></script>
+  <script src="assets/js/polygon.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script src="assets/js/leaflet-measure.js"></script>
+  <script type="text/javascript">
+
+    var map = L.map('map',{measureControl:true}).setView([51.52255, -0.10249], 13);
+    let marker, circle, zoomed;
+
+    navigator.geolocation.watchPosition(success, error);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+    //TYPES OF MAPS
+    function def() {
+      goo = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      });
+      goo.addTo(map);
+
+    }
+    function hybd() {
+      gooH = L.tileLayer('http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      });
+      gooH.addTo(map);
+
+    }
+    function sat() {
+      gooS = L.tileLayer('http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      });
+      gooS.addTo(map);
+
+    }
+
+    function ter() {
+      gooTe = L.tileLayer('http://{s}.google.com/vt?lyrs=p&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      });
+      gooTe.addTo(map);
+    }
+
+    var spots = [];
+
+    var latg;
+    var lngg;
+
+    //IF CURRENT LOC IS GOTTEN
+    function success(pos) {
+
+
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      const accuracy = pos.coords.accuracy;
+
+      if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+      }
+      // Removes any existing marker and circule (new ones about to be set)
+
+      marker = L.marker([lat, lng]).addTo(map)
+      spots.push(marker);
+
+      circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+      // Adds marker to the map and a circle for accuracy
+
+      if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds());
+      }
+      // Set zoom to boundaries of accuracy circle
+
+      map.setView([lat, lng]);
+
+      var api_key = '94b30cd800f54ca99eac1ee2689e1a89';
+
+      // reverse geocoding example (coordinates to address)
+      var latitude = lat;
+      var longitude = lng;
+      var query = latitude + ',' + longitude;
+      
+
+      // forward geocoding example (address to coordinate)
+      // var query = 'Philipsbornstr. 2, 30165 Hannover, Germany';
+      // note: query needs to be URI encoded (see below)
+
+      var api_url = 'https://api.opencagedata.com/geocode/v1/json'
+
+      var request_url = api_url
+        + '?'
+        + 'key=' + api_key
+        + '&q=' + encodeURIComponent(query)
+        + '&pretty=1'
+        + '&no_annotations=1';
+
+      // see full list of required and optional parameters:
+      // https://opencagedata.com/api#required-params
+
+      var request = new XMLHttpRequest();
+      request.open('GET', request_url, true);
+
+      request.onload = function () {
+        // see full list of possible response codes:
+        // https://opencagedata.com/api#codes
+        if (request.status === 200) {
+          // Success!
+          var data = JSON.parse(request.responseText);
+          marker.bindPopup(data.results[0].formatted);
+          marker.openPopup();
+
+        } else if (request.status <= 500) {
+          // We reached our target server, but it returned an error
+
+          console.log("unable to geocode! Response code: " + request.status);
+          var data = JSON.parse(request.responseText);
+          console.log('error msg: ' + data.status.message);
+        } else {
+          console.log("server error");
+        }
+        const show = JSON.stringify(data);
+        console.log(show.results);
+
+
+      };
+
+      request.onerror = function () {
+        // There was a connection error of some sort
+        console.log("unable to connect to server");
+      };
+
+      request.send();  // make the request
+
+
+      map.on('click',function(e){
+        
+      var secondMarker=L.marker([e.latlng.lat,e.latlng.lng]).addTo(map);
+      spots.push(secondMarker);
+
+      console.log("AAHHHHH");
+
+      console.log(lat,lng);
+      console.log(e.latlng.lat,e.latlng.lng);
+      
+
+      L.Routing.control({
+    waypoints: [
+      L.latLng(lat,lng),
+      L.latLng(e.latlng.lat, e.latlng.lng)
+    ]
+    })
+    .addTo(map);
+  })
+
+
+
+    }
+
+    function error(err) {
+      switch (err.code) {
+        case err.PERMISSION_DENIED:
+          x.innerHTML = "User denied the request for Geolocation."
+          break;
+        case err.POSITION_UNAVAILABLE:
+          x.innerHTML = "Location information is unavailable."
+          break;
+        case err.TIMEOUT:
+          x.innerHTML = "The request to get user location timed out."
+          break;
+        case err.UNKNOWN_ERROR:
+          x.innerHTML = "An unknown error occurred."
+          break;
+      }
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+    }
+    var options = {
+      key: '3c38d15e76c02545181b07d3f8cfccf0', 
+      limit: 10
+    };
+
+    var geocoder = L.Control.OpenCageGeocoding.geocoder(options);
+    var control = L.Control.openCageGeocoding(options).addTo(map);
+    var marker1;
+
+
+    // /*L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    //   attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+    // }).addTo(map);*/
+
+    L.tileLayer('https://{s}.tile.thunderforest.com/atlas/{z}/{x}/{y}{r}.png?apikey=224e9cefe709416d953c7c9177ef3ff7', {
+      attribution: 'Data <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors, Map tiles &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
+      minZoom: 4,
+      maxZoom: 18
+    }).addTo(map);
+
+    // map.on('click', function (e) {
+    //   var query = e.latlng.lat.toString() + ',' + e.latlng.lng.toString();
+    //   geocoder.geocode(query, function (results) {
+    //     var r = results[0];
+    //     if (r) {
+    //       if (marker1) {
+    //         marker1.setLatLng(r.center).setPopupContent(r.name).openPopup();
+    //       } else {
+    //         marker1 = L.marker(r.center).bindPopup(r.name).addTo(map).openPopup();
+    //       }
+    //       spots.push(marker1);
+    //     }
+    //   })
+    // })
+
+
+  
+//     console.log(latg,lngg);
+
+    
+
+
+    var baseMaps = {
+    };
+
+    var overlaymap = {
+      'Markers': spots
+    };
+    console.log("HAAA");
+    console.log(spots);
+    L.control.layers(baseMaps, overlaymap, { collapsed: false }).addTo(map);
+
+    
+
+    // map.on('mousemove', function (e) {
+    //   document.getElementsByClassName('coordinate')[0].innerHTML = 'Lat:' + e.latlng.lat, 'Lng:' + e.latlng.lng;
+    //   console.log('Lat:' + e.latlng.lat, 'Lng:' + e.latlng.lng);
+    // })
+
+    // L.Routing.control({
+    //   waypoints: [
+    //     L.latLng(57.74, 11.94),
+    //     L.latLng(57.6792, 11.949)
+    //   ]
+    // }).addTo(map);
+
+
+
+
+  </script>
+</body>
+
+</html>
